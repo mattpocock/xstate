@@ -1,6 +1,6 @@
 {
   "name": "@xstate/immer",
-  "version": "0.1.0",
+  "version": "1.0.0-next.0",
   "description": "XState with Immer",
   "keywords": [
     "immer",
@@ -15,9 +15,7 @@
   "main": "dist/immer.cjs.js",
   "module": "dist/immer.esm.js",
   "sideEffects": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/davidkpiano/xstate.git"
@@ -29,7 +27,7 @@
   "dependencies": {},
   "peerDependencies": {
     "immer": "^6.0.3",
-    "xstate": "^4.9.1"
+    "xstate": "^5.0.0-next.0"
   },
   "devDependencies": {
     "immer": "^6.0.3",

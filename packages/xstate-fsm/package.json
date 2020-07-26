@@ -1,6 +1,6 @@
 {
   "name": "@xstate/fsm",
-  "version": "1.4.0",
+  "version": "1.2.0-next.0",
   "description": "XState for finite state machines",
   "keywords": [
     "state",
@@ -20,9 +20,7 @@
   "main": "dist/fsm.cjs.js",
   "module": "dist/fsm.esm.js",
   "sideEffects": false,
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/davidkpiano/xstate.git"
