@@ -1,4 +1,4 @@
-import { StateNode } from './StateNode';
+import { StateNode, NotGeneratedStateNode } from './StateNode';
 import { State } from './State';
 import { Interpreter, Clock } from './interpreter';
 import { Actor } from './Actor';
@@ -685,6 +685,17 @@ export interface StateMachine<
 > extends StateNode<TContext, TStateSchema, TEvent, TTypestate> {
   id: string;
   states: StateNode<TContext, TStateSchema, TEvent>['states'];
+}
+
+export interface NotGeneratedStateMachine<
+  TContext,
+  TStateSchema extends StateSchema,
+  TEvent extends EventObject,
+  TTypestate extends Typestate<TContext> = any
+> extends NotGeneratedStateNode<TContext, TStateSchema, TEvent, TTypestate> {
+  _isGenerated: false;
+  id: string;
+  states: NotGeneratedStateNode<TContext, TStateSchema, TEvent>['states'];
 }
 
 export type StateFrom<

@@ -56,6 +56,7 @@ import { Actor, isActor, createDeferredActor } from './Actor';
 import { isInFinalState } from './stateUtils';
 import { registry } from './registry';
 import { registerService } from './devTools';
+import { NotGeneratedStateMachine } from '.';
 
 export type StateListener<
   TContext,
@@ -1327,7 +1328,7 @@ export function interpret<
   TEvent extends EventObject = EventObject,
   TTypestate extends Typestate<TContext> = { value: any; context: TContext }
 >(
-  machine: StateMachine<TContext, TStateSchema, TEvent, TTypestate>,
+  machine: NotGeneratedStateMachine<TContext, TStateSchema, TEvent, TTypestate>,
   options?: Partial<InterpreterOptions>
 ) {
   const interpreter = new Interpreter<

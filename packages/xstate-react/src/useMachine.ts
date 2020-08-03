@@ -3,7 +3,6 @@ import useIsomorphicLayoutEffect from 'use-isomorphic-layout-effect';
 import {
   interpret,
   EventObject,
-  StateMachine,
   State,
   Interpreter,
   InterpreterOptions,
@@ -13,7 +12,8 @@ import {
   ActionObject,
   ActionFunction,
   ActionMeta,
-  StateNode
+  StateNode,
+  NotGeneratedStateMachine
 } from 'xstate';
 import useConstant from './useConstant';
 import { partition } from './utils';
@@ -104,7 +104,7 @@ export function useMachine<
   TEvent extends EventObject,
   TTypestate extends Typestate<TContext> = { value: any; context: TContext }
 >(
-  machine: StateMachine<TContext, any, TEvent, TTypestate>,
+  machine: NotGeneratedStateMachine<TContext, any, TEvent, TTypestate>,
   options: Partial<InterpreterOptions> &
     Partial<UseMachineOptions<TContext, TEvent>> &
     Partial<MachineOptions<TContext, TEvent>> = {}

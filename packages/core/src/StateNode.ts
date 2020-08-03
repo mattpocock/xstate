@@ -146,6 +146,8 @@ class StateNode<
   TEvent extends EventObject = EventObject,
   TTypestate extends Typestate<TContext> = { value: any; context: TContext }
 > {
+  // @ts-ignore
+  _isGenerated: any;
   /**
    * The relative key of the state node, which represents its location in the overall state value.
    */
@@ -1946,4 +1948,24 @@ class StateNode<
   }
 }
 
-export { StateNode };
+class GeneratedStateNode<
+  TContext = any,
+  TStateSchema extends StateSchema = any,
+  TEvent extends EventObject = EventObject,
+  TTypestate extends Typestate<TContext> = any
+> extends StateNode<TContext, TStateSchema, TEvent, TTypestate> {
+  // @ts-ignore
+  _isGenerated: true;
+}
+
+class NotGeneratedStateNode<
+  TContext = any,
+  TStateSchema extends StateSchema = any,
+  TEvent extends EventObject = EventObject,
+  TTypestate extends Typestate<TContext> = any
+> extends StateNode<TContext, TStateSchema, TEvent, TTypestate> {
+  // @ts-ignore
+  _isGenerated: false;
+}
+
+export { StateNode, GeneratedStateNode, NotGeneratedStateNode };

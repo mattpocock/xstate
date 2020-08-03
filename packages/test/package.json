@@ -1,0 +1,10 @@
+{
+  "name": "codegen-test",
+  "version": "1.3.0",
+  "scripts": {},
+  "devDependencies": {
+    "@xstate/react": "1.0.0-rc.6",
+    "typescript": "^3.8.3",
+    "xstate": "*"
+  }
+}
